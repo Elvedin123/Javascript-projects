@@ -117,13 +117,36 @@ form button:hover{
   padding: 2rem;
   border: 1px solid #777;
   text-align: center;
-  animation: slide ease .8s;
+  animation: slide ease 2s;
 }
 
 @keyframes slide {
-  from{
-    transform: translateY(-30);
-  }to{
+  0%{
+    transform: translateY(-30rem);
+  }
+  100% {
     transform: translateY(0);
+  }
+}
+
+.close{
+  position: absolute;
+  top: 5px; 
+  right: 10px;
+  color: var(--color-primary);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.slide-up {
+  animation: slide-up ease 2s;
+}
+
+@keyframes slide-up {
+  0%{
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50rem);
   }
 }
