@@ -131,7 +131,7 @@ img {
   margin: 4rem;
 }
 
-,quiz-repeat {
+/* ,quiz-repeat {
   text-align: center;
   margin: 0 auto;
 }
@@ -148,4 +148,4 @@ img {
 
 ,quiz-repeat a:hover {
   background-color: var(--color-primary);
-}
+} */
