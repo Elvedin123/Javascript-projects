@@ -62,9 +62,8 @@ function guess(id, guess) {
 
 function showProgress() {
   let currentQuestionNumber = quiz.questionIndex + 1;
-  let progressElement = document.getElementById("progress");
-
-  progressElement.innerHTML = `Question ${currentQuestionNumber} of ${quiz.questions.length}`;
+  let ProgressElement = document.getElementById("progress");
+  ProgressElement.innerHTML = `Question ${currentQuestionNumber} of ${quiz.questions.length}`;
 }
 
 function showScores() {
@@ -81,11 +80,15 @@ function showScores() {
 
 let questions = [
   new Question(
-    "Does Elvedin want to eat Seidas ass?",
-    ["Yes", "Yea", "Hell yea", "OH MY GORD YES"],
-    "OH MY GORD YES"
+    "Hyper Text Markup Language Stands For?",
+    ["JQuery", "XHTML", "CSS", "HTML"],
+    "HTML"
   ),
-  new Question("Is Seida Gay?", ["Yea", "Yes", "Always", "OH JES"], "OH JES"),
+  new Question(
+    "Cascading Style sheet stands for?",
+    ["HTML", "JQuery", "CSS", "XML"],
+    "CSS"
+  ),
   new Question(
     "Which is a JavaScript Framework?",
     ["React", "Laravel", "Django", "Sass"],
@@ -96,7 +99,11 @@ let questions = [
     ["PHP", "HTML", "React", "All"],
     "PHP"
   ),
-  new Question("Are you gay?", ["Yes", "No", "Pride month only", "Gay"], "Yes"),
+  new Question(
+    "Which is best for Artificial intelligence?",
+    ["React", "Laravel", "Python", "Sass"],
+    "Python"
+  ),
 ];
 
 let quiz = new Quiz(questions);
@@ -104,17 +111,18 @@ let quiz = new Quiz(questions);
 displayQuestion();
 
 let time = 10;
-let quizTimeInMin = time * 60 * 60;
-let quizTime = quizTimeInMin / 60;
+let quizTimeInMinutes = time * 60 * 60;
+let quizTime = quizTimeInMinutes / 60;
 
 let counting = document.getElementById("count-down");
+
 function startCountdown() {
   let quizTimer = setInterval(function () {
     if (quizTime <= 0) {
       clearInterval(quizTimer);
       showScores();
     } else {
-      quizTimer--;
+      quizTime--;
       let sec = Math.floor(quizTime % 60);
       let min = Math.floor(quizTime / 60) % 60;
       counting.innerHTML = `TIME: ${min} : ${sec}`;
